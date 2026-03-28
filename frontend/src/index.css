@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-base: #050505;
+  --bg-panel: rgba(18, 18, 20, 0.7);
+  --bg-panel-hover: rgba(28, 28, 30, 0.8);
+  --bg-sidebar: #0a0a0b;
+
+  --border-light: rgba(255, 255, 255, 0.06);
+  --border-focus: rgba(34, 211, 238, 0.3);
+
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-accent: #38bdf8;
+
+  --color-primary: #0ea5e9;
+  --color-success: #10b981;
+  --color-danger: #f43f5e;
+  --color-warning: #f59e0b;
+
+  --glow-primary: rgba(14, 165, 233, 0.15);
+  --glow-danger: rgba(244, 63, 94, 0.15);
+
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-base);
+  color: var(--text-main);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* Figma Gradient Spec */
+.bg-glows {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  background-color: #050505;
+}
+
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  background: #1A73E8;
+  transform: translate(-50%, -50%);
+}
+
+.glow-1 {
+  width: 800px;
+  height: 800px;
+  top: 0%;
+  left: 10%;
+  filter: blur(490.9px);
+  opacity: 0.11;
+}
+
+.glow-2 {
+  width: 800px;
+  height: 800px;
+  top: 40%;
+  left: 85%;
+  filter: blur(490.9px);
+  opacity: 0.57;
+}
+
+.glow-3 {
+  width: 500px;
+  height: 500px;
+  top: 90%;
+  left: 50%;
+  filter: blur(248.4px);
+  opacity: 1;
+}
+
+#root {
+  display: flex;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 7px rgba(244, 63, 94, 0);
+  }
+
+  100% {
+    transform: scale(0.8);
+    box-shadow: 0 0 0 0 rgba(244, 63, 94, 0);
+  }
+}

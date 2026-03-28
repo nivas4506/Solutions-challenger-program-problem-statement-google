@@ -1,0 +1,119 @@
+﻿
+> frontend@0.0.0 build
+> vite build
+
+[36mvite v8.0.3 [32mbuilding client environment for production...[36m[39m
+[2K
+node.exe : [33m[vite:css][postcss] @import must precede all other statements 
+(besides @charset or empty @layer)
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Users\A\AppData\Roaming\npm/ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([33m[vite:css]...r empty @layer) 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+3  |  @tailwind utilities;
+4  |  
+5  |  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400
+;500;600;700;800&family=Inter:wght@400;500;6...
+   |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+6  |  
+7  |  :root {[39m
+transforming...Γ£ô 2305 modules transformed.
+rendering chunks...
+[31mΓ£ù[39m Build failed in 1.30s
+[31merror during build:
+[31mBuild failed with 3 errors:
+
+[31m[MISSING_EXPORT] Error:[0m "Twitter" is not exported by 
+"node_modules/lucide-react/dist/esm/lucide-react.js".
+   [38;5;246mΓò¡[0m[38;5;246mΓöÇ[0m[38;5;246m[[0m 
+src/components/landing/Footer.jsx:2:23 [38;5;246m][0m
+   [38;5;246mΓöé[0m
+ [38;5;246m2 Γöé[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;24
+9mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m 
+[0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mS[0m[38;5;249mh[0m[38;5;249m
+i[0m[38;5;249me[0m[38;5;249ml[0m[38;5;249md[0m[38;5;249mC[0m[38;5;249
+mh[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mk[0m[38;5;249m,[0m[38;5;24
+9m [0mTwitter[38;5;249m,[0m[38;5;249m [0m[38;5;249mL[0m[38;5;249mi[0m
+[38;5;249mn[0m[38;5;249mk[0m[38;5;249me[0m[38;5;249md[0m[38;5;249mi[0m
+[38;5;249mn[0m[38;5;249m,[0m[38;5;249m [0m[38;5;249mG[0m[38;5;249mi[0
+m[38;5;249mt[0m[38;5;249mh[0m[38;5;249mu[0m[38;5;249mb[0m[38;5;249m 
+[0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249m
+o[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249ml[0m[38;5;249
+mu[0m[38;5;249mc[0m[38;5;249mi[0m[38;5;249md[0m[38;5;249me[0m[38;5;24
+9m-[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;2
+49mt[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  Γöé[0m                       ΓöÇΓöÇΓöÇΓö¼ΓöÇΓöÇΓöÇ  
+ [38;5;240m  Γöé[0m                          Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇ Missing 
+export
+[38;5;246mΓöÇΓöÇΓöÇΓò»[0m
+
+[31m[MISSING_EXPORT] Error:[0m "Linkedin" is not exported by 
+"node_modules/lucide-react/dist/esm/lucide-react.js".
+   [38;5;246mΓò¡[0m[38;5;246mΓöÇ[0m[38;5;246m[[0m 
+src/components/landing/Footer.jsx:2:32 [38;5;246m][0m
+   [38;5;246mΓöé[0m
+ [38;5;246m2 Γöé[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;24
+9mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m 
+[0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mS[0m[38;5;249mh[0m[38;5;249m
+i[0m[38;5;249me[0m[38;5;249ml[0m[38;5;249md[0m[38;5;249mC[0m[38;5;249
+mh[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mk[0m[38;5;249m,[0m[38;5;24
+9m [0m[38;5;249mT[0m[38;5;249mw[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;2
+49mt[0m[38;5;249me[0m[38;5;249mr[0m[38;5;249m,[0m[38;5;249m 
+[0mLinkedin[38;5;249m,[0m[38;5;249m [0m[38;5;249mG[0m[38;5;249mi[0m[3
+8;5;249mt[0m[38;5;249mh[0m[38;5;249mu[0m[38;5;249mb[0m[38;5;249m 
+[0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;5;249mr[0m[38;5;249m
+o[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38;5;249ml[0m[38;5;249
+mu[0m[38;5;249mc[0m[38;5;249mi[0m[38;5;249md[0m[38;5;249me[0m[38;5;24
+9m-[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249ma[0m[38;5;249mc[0m[38;5;2
+49mt[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  Γöé[0m                                ΓöÇΓöÇΓöÇΓöÇΓö¼ΓöÇΓöÇΓöÇ  
+ [38;5;240m  Γöé[0m                                    Γò░ΓöÇΓöÇΓöÇΓöÇΓöÇ 
+Missing export
+[38;5;246mΓöÇΓöÇΓöÇΓò»[0m
+
+[31m[MISSING_EXPORT] Error:[0m "Github" is not exported by 
+"node_modules/lucide-react/dist/esm/lucide-react.js".
+   [38;5;246mΓò¡[0m[38;5;246mΓöÇ[0m[38;5;246m[[0m 
+src/components/landing/Footer.jsx:2:42 [38;5;246m][0m
+   [38;5;246mΓöé[0m
+ [38;5;246m2 Γöé[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;24
+9mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m 
+[0m[38;5;249m{[0m[38;5;249m [0m[38;5;249mS[0m[38;5;249mh[0m[38;5;249m
+i[0m[38;5;249me[0m[38;5;249ml[0m[38;5;249md[0m[38;5;249mC[0m[38;5;249
+mh[0m[38;5;249me[0m[38;5;249mc[0m[38;5;249mk[0m[38;5;249m,[0m[38;5;24
+9m [0m[38;5;249mT[0m[38;5;249mw[0m[38;5;249mi[0m[38;5;249mt[0m[38;5;2
+49mt[0m[38;5;249me[0m[38;5;249mr[0m[38;5;249m,[0m[38;5;249m [0m[38;5;
+249mL[0m[38;5;249mi[0m[38;5;249mn[0m[38;5;249mk[0m[38;5;249me[0m[38;5
+;249md[0m[38;5;249mi[0m[38;5;249mn[0m[38;5;249m,[0m[38;5;249m 
+[0mGithub[38;5;249m [0m[38;5;249m}[0m[38;5;249m [0m[38;5;249mf[0m[38;
+5;249mr[0m[38;5;249mo[0m[38;5;249mm[0m[38;5;249m [0m[38;5;249m"[0m[38
+;5;249ml[0m[38;5;249mu[0m[38;5;249mc[0m[38;5;249mi[0m[38;5;249md[0m[3
+8;5;249me[0m[38;5;249m-[0m[38;5;249mr[0m[38;5;249me[0m[38;5;249ma[0m[
+38;5;249mc[0m[38;5;249mt[0m[38;5;249m"[0m[38;5;249m;[0m
+ [38;5;240m  Γöé[0m                                          
+ΓöÇΓöÇΓöÇΓö¼ΓöÇΓöÇ  
+ [38;5;240m  Γöé[0m                                             
+Γò░ΓöÇΓöÇΓöÇΓöÇ Missing export
+[38;5;246mΓöÇΓöÇΓöÇΓò»[0m
+[31m
+    at aggregateBindingErrorsIntoJsError (file:///C:/Users/A/OneDrive/Documents
+/Solution%20Challenger/frontend/node_modules/rolldown/dist/shared/error-BLhcSye
+g.mjs:48:18)
+    at unwrapBindingResult (file:///C:/Users/A/OneDrive/Documents/Solution%20Ch
+allenger/frontend/node_modules/rolldown/dist/shared/error-BLhcSyeg.mjs:18:128)
+    at #build (file:///C:/Users/A/OneDrive/Documents/Solution%20Challenger/fron
+tend/node_modules/rolldown/dist/shared/rolldown-build-CPrIX9V6.mjs:3313:34)
+    at async buildEnvironment (file:///C:/Users/A/OneDrive/Documents/Solution%2
+0Challenger/frontend/node_modules/vite/dist/node/chunks/node.js:32849:64)
+    at async Object.build (file:///C:/Users/A/OneDrive/Documents/Solution%20Cha
+llenger/frontend/node_modules/vite/dist/node/chunks/node.js:33271:19)
+    at async Object.buildApp (file:///C:/Users/A/OneDrive/Documents/Solution%20
+Challenger/frontend/node_modules/vite/dist/node/chunks/node.js:33268:153)
+    at async CAC.<anonymous> (file:///C:/Users/A/OneDrive/Documents/Solution%20
+Challenger/frontend/node_modules/vite/dist/node/cli.js:778:3) {
+  errors: [Getter/Setter]
+}[39m

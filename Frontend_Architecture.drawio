@@ -1,0 +1,53 @@
+<mxfile host="Electron" modified="2023-10-01T00:00:00.000Z" agent="Mozilla/5.0" version="21.6.8" type="device">
+  <diagram id="ui-arch" name="Frontend Architecture">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#050505" strokeColor="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- App Container -->
+        <mxCell id="AppContainer" value="App Container (app-container)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#3b82f6;dashed=1;verticalAlign=top;align=left;spacing=10;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="800" height="600" as="geometry" />
+        </mxCell>
+        
+        <!-- Sidebar -->
+        <mxCell id="Sidebar" value="Sidebar (sidebar)&#10;- Navigation Links&#10;- Brand Logo" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#475569;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="100" y="120" width="160" height="540" as="geometry" />
+        </mxCell>
+        
+        <!-- Header -->
+        <mxCell id="TopHeader" value="Top Header (top-header)&#10;- Global Search&#10;- Alerts / Profile" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1e293b;strokeColor=#475569;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="280" y="120" width="580" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Main Dashboard View -->
+        <mxCell id="DashboardContent" value="Dashboard Content (dashboard-content)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#64748b;dashed=1;verticalAlign=top;align=left;spacing=10;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="280" y="200" width="580" height="460" as="geometry" />
+        </mxCell>
+        
+        <!-- Metric Cards -->
+        <mxCell id="MetricCardsGroup" value="Metrics Grid" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;verticalAlign=top;align=left;spacing=5;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="300" y="240" width="540" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="MetricCard1" value="Metric: Assets" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#0ea5e9;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="300" y="260" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="MetricCard2" value="Metric: Blocked" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#f43f5e;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="490" y="260" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="MetricCard3" value="Metric: Latency" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#10b981;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="680" y="260" width="160" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Data Grid -->
+        <mxCell id="ChartsPanel" value="Charts Panel (recharts)&#10;Ingestion vs Piracy volume" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#cbd5e1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="300" y="380" width="340" height="260" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="AlertsPanel" value="Live Intercept Feed&#10;(Mock Data)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#cbd5e1;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="660" y="380" width="180" height="260" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

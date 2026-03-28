@@ -1,0 +1,169 @@
+version: "3.8"
+
+services:
+  # Metadata Database
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: digital_asset_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # Vector Database for Fingerprints
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+  # Message Broker (Kafka compatible)
+  redpanda:
+    image: vectorized/redpanda:latest
+    command:
+      - redpanda
+      - start
+      - --smp
+      - "1"
+      - --reserve-memory
+      - 0M
+      - --overprovisioned
+      - --node-id
+      - "0"
+      - --kafka-addr
+      - PLAINTEXT://0.0.0.0:9092,OUTSIDE://0.0.0.0:9093
+      - --advertise-kafka-addr
+      - PLAINTEXT://redpanda:9092,OUTSIDE://localhost:9093
+    ports:
+      - "9092:9092"
+      - "9093:9093"
+    volumes:
+      - redpanda_data:/var/lib/redpanda/data
+
+  # Object Storage (S3 Mock)
+  minio:
+    image: minio/minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: admin
+      MINIO_ROOT_PASSWORD: password123
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+
+  # Cache
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  # Media Ingestion FastAPI Service
+  media-ingestion:
+    build: ./media-ingestion
+    ports:
+      - "8000:8000"
+    environment:
+      - S3_ENDPOINT=http://minio:9000
+      - KAFKA_BROKER=redpanda:9092
+    depends_on:
+      - minio
+      - redpanda
+
+  # Watermarking Kafka Consumer
+  watermarking-svc:
+    build: ./watermarking-svc
+    environment:
+      - S3_ENDPOINT=http://minio:9000
+      - KAFKA_BROKER=redpanda:9092
+    depends_on:
+      - minio
+      - redpanda
+
+  # Fingerprinting ML Service
+  fingerprinting-svc:
+    build: ./fingerprinting-svc
+    environment:
+      - S3_ENDPOINT=http://minio:9000
+      - KAFKA_BROKER=redpanda:9092
+      - PG_HOST=postgres
+      - QDRANT_HOST=qdrant
+    depends_on:
+      - minio
+      - redpanda
+      - postgres
+      - qdrant
+      - watermarking-svc
+
+  # Crawler Manager Node Service
+  crawler-manager:
+    build: 
+      context: ./crawler-manager
+      dockerfile: Dockerfile.manager
+    environment:
+      - KAFKA_BROKER=redpanda:9092
+    depends_on:
+      - redpanda
+      
+  # Scraper Worker Node Service
+  scraper-worker:
+    build: 
+      context: ./crawler-manager
+      dockerfile: Dockerfile.worker
+    environment:
+      - KAFKA_BROKER=redpanda:9092
+    depends_on:
+      - redpanda
+
+  # Detection Engine Python Service
+  detection-engine:
+    build: ./detection-engine
+    environment:
+      - KAFKA_BROKER=redpanda:9092
+      - QDRANT_HOST=qdrant
+    depends_on:
+      - redpanda
+      - qdrant
+      - crawler-manager
+      - scraper-worker
+
+  # ClickHouse for Analytics
+  clickhouse:
+    image: clickhouse/clickhouse-server:latest
+    ports:
+      - "8123:8123"
+      - "9004:9000"
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+
+  # Alert Notification Service
+  alert-svc:
+    build: ./alert-svc
+    environment:
+      - KAFKA_BROKER=redpanda:9092
+    depends_on:
+      - redpanda
+
+  # Dashboard Analytical Service
+  dashboard-svc:
+    build: ./dashboard-svc
+    ports:
+      - "8080:8080"
+    environment:
+      - KAFKA_BROKER=redpanda:9092
+      - CLICKHOUSE_HOST=clickhouse
+    depends_on:
+      - redpanda
+      - clickhouse
+
+volumes:
+  clickhouse_data:
+  postgres_data:
+  qdrant_data:
+  redpanda_data:
+  minio_data:

@@ -1,0 +1,5 @@
+kafka-python==2.0.2
+boto3==1.28.44
+psycopg2-binary==2.9.7
+qdrant-client==1.6.0
+numpy==1.25.2

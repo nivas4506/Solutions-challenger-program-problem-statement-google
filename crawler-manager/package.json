@@ -1,0 +1,13 @@
+{
+  "name": "crawler-system",
+  "version": "1.0.0",
+  "scripts": {
+    "start:manager": "node manager.js",
+    "start:worker": "node worker.js"
+  },
+  "dependencies": {
+    "kafkajs": "^2.2.4",
+    "axios": "^1.6.2",
+    "cron": "^3.1.6"
+  }
+}
