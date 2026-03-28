@@ -12,7 +12,7 @@
 
 ## 📽️ Project Overview
 
-<video src="https://github.com/nivas4506/Solutions-challenger-program-problem-statement-google/raw/master/Digital_Asset_Protection_202603282156.mp4" width="100%" controls></video>
+<video src="https://raw.githubusercontent.com/nivas4506/Solutions-challenger-program-problem-statement-google/master/Digital_Asset_Protection_202603282156.mp4" width="100%" controls></video>
 
 > [!TIP]
 > *If the video doesn't play directly in your browser, you can view it here: [Watch Video](Digital_Asset_Protection_202603282156.mp4)*
