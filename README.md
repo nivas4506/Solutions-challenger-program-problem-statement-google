@@ -12,10 +12,10 @@
 
 ## 📽️ Project Overview
 
-![Project Overview Video](./Digital_Asset_Protection_202603282156.mp4)
+<video src="Digital_Asset_Protection_202603282156.mp4" width="100%" controls></video>
 
-> [!NOTE]
-> *If the video doesn't play directly in your browser, please find it at: `Digital_Asset_Protection_202603282156.mp4`*
+> [!TIP]
+> *If the video doesn't play directly in your browser, you can view it here: [Watch Video](Digital_Asset_Protection_202603282156.mp4)*
 
 ---
 
